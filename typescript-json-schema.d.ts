@@ -1,4 +1,4 @@
-import * as ts from "typescript";
+import * as ts from 'typescript';
 export declare function getDefaultArgs(): Args;
 export declare type ValidationKeywords = {
     [prop: string]: boolean;
@@ -32,19 +32,19 @@ export declare type Definition = {
         [key: string]: any;
     };
     format?: string;
-    items?: Definition;
+    items?: Definition | Definition[];
     minItems?: number;
     additionalItems?: {
-        anyOf: Definition;
+        anyOf: Definition | Definition[];
     };
     enum?: PrimitiveType[] | Definition[];
     default?: PrimitiveType | Object;
-    additionalProperties?: Definition;
+    additionalProperties?: Definition | boolean;
     required?: string[];
     propertyOrder?: string[];
     properties?: {};
     defaultProperties?: string[];
-    typeof?: "function";
+    typeof?: 'function';
 };
 export declare class JsonSchemaGenerator {
     private args;
